@@ -1,0 +1,212 @@
+﻿
+@{
+    ViewBag.Title = "View_ChessBoard";
+}
+
+<h2>Welcome to Chess!</h2>
+
+
+<!DOCTYPE html>
+<head runat="server">
+    <title>Chess Board   </title>
+    <meta charset="UTF-8">
+    <style>
+        .button {
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .button1 {
+            background-color: white;
+            color: black;
+            border: 2px solid #4CAF50;
+        }
+
+            .button1:hover {
+                background-color: #4CAF50;
+                color: white;
+            }
+
+        .button2 {
+            background-color: white;
+            color: black;
+            border: 2px solid #008CBA;
+        }
+
+            .button2:hover {
+                background-color: #008CBA;
+                color: white;
+            }
+
+        .chess-board {
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+        /* Set additional styling options for the columns */
+
+        /* Set width length for the left, right and middle columns */
+        .left {
+            width: 60%;
+        }
+
+        .right {
+            width: 40%;
+        }
+
+            .chess-board th {
+                padding: .5em;
+            }
+
+                .chess-board th + th {
+                    border-bottom: 1px solid #000;
+                }
+
+                .chess-board th:first-child,
+                .chess-board td:last-child {
+                    border-right: 1px solid #000;
+                }
+
+            .chess-board tr:last-child td {
+                border-bottom: 1px solid;
+            }
+
+            .chess-board th:empty {
+                border: none;
+            }
+
+            .chess-board td {
+                width: 1.5em;
+                height: 1.5em;
+                text-align: center;
+                font-size: 64px;
+                line-height: 0;
+            }
+
+            .chess-board .light {
+                background: #eee;
+            }
+
+            .chess-board .dark {
+                background: #aaa;
+            }
+    </style>
+</head>
+<html>
+<body>
+    <div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-8" name="Board">
+            <table class="chess-board">
+                <tbody>
+                    <tr>
+                        <td class="light">♜</td>
+                        <td class="dark">♞</td>
+                        <td class="light">♝</td>
+                        <td class="dark">♛</td>
+                        <td class="light">♚</td>
+                        <td class="dark">♝</td>
+                        <td class="light">♞</td>
+                        <td class="dark">♜</td>
+                    </tr>
+                    <tr>
+                        <td class="dark">♟</td>
+                        <td class="light">♟</td>
+                        <td class="dark">♟</td>
+                        <td class="light">♟</td>
+                        <td class="dark">♟</td>
+                        <td class="light">♟</td>
+                        <td class="dark">♟</td>
+                        <td class="light">♟</td>
+                    </tr>
+                    <tr>
+                        <td class="light"></td>
+                        <td class="dark"></td>
+                        <td class="light"></td>
+                        <td class="dark"></td>
+                        <td class="light"></td>
+                        <td class="dark"></td>
+                        <td class="light"></td>
+                        <td class="dark"></td>
+                    </tr>
+                    <tr>
+                        <td class="dark"></td>
+                        <td class="light"></td>
+                        <td class="dark"></td>
+                        <td class="light"></td>
+                        <td class="dark"></td>
+                        <td class="light"></td>
+                        <td class="dark"></td>
+                        <td class="light"></td>
+                    </tr>
+                    <tr>
+                        <td class="light"></td>
+                        <td class="dark"></td>
+                        <td class="light"></td>
+                        <td class="dark"></td>
+                        <td class="light"></td>
+                        <td class="dark"></td>
+                        <td class="light"></td>
+                        <td class="dark"></td>
+                    </tr>
+                    <tr>
+                        <td class="dark"></td>
+                        <td class="light"></td>
+                        <td class="dark"></td>
+                        <td class="light"></td>
+                        <td class="dark"></td>
+                        <td class="light"></td>
+                        <td class="dark"></td>
+                        <td class="light"></td>
+                    </tr>
+                    <tr>
+                        <td class="light">♙</td>
+                        <td class="dark">♙</td>
+                        <td class="light">♙</td>
+                        <td class="dark">♙</td>
+                        <td class="light">♙</td>
+                        <td class="dark">♙</td>
+                        <td class="light">♙</td>
+                        <td class="dark">♙</td>
+                    </tr>
+                    <tr>
+                        <td class="dark">♖</td>
+                        <td class="light">♘</td>
+                        <td class="dark">♗</td>
+                        <td class="light">♕</td>
+                        <td class="dark">♔</td>
+                        <td class="light">♗</td>
+                        <td class="dark">♘</td>
+                        <td class="light">♖</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-4">
+            <h2>Statistics</h2>
+            <div>
+                <h4 class="text-left">Player 1: A</h4>
+                <h4>Player 2: B</h4>
+                <h4>Refree: C</h4>
+                <div>
+                    <div class="col-lg-6">
+                        <button class="button button1">Play</button>
+                    </div>
+                    <div class="col-lg-6">
+                        <button class="button button2">Stop</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
